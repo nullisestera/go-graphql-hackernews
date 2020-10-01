@@ -52,8 +52,8 @@ mutation create{
     ```
 5) Run Migrations with the following command:
 `migrate -database 'mysql://yourdbuser:yourdbpass@tcp(yourhost:yourport)/hackernews' -path internal/pkg/db/migrations/mysql up`
-6) Create in internal a folder with your migration (i.e. users)
-7) Create a go file inside, with your migration (i.e. `internal/users/users.go`)
+6) Create in internal a folder with your migration (i.e. links)
+7) Create a go file inside, with your migration (i.e. `internal/links/links.go`)
 8) In the created file, create your struct accord to GraphQL Schema. Check example in `internal/links/links.go`
 9) Modify the resolver for your schema in `graph/schema.resolvers.go`
 
