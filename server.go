@@ -3,13 +3,15 @@ package main
 import (
 	"go-graphql-hackernews/graph"
 	"go-graphql-hackernews/graph/generated"
-	"go-graphql-hackernews/internal/pkg/db/migrations/mysql"
+	"go-graphql-hackernews/internal/auth"
+	database "go-graphql-hackernews/internal/pkg/db/migrations/mysql"
 	"log"
 	"net/http"
 	"os"
 
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/playground"
+	"github.com/go-chi/chi"
 )
 
 const defaultPort = "8080"
@@ -19,6 +21,10 @@ func main() {
 	if port == "" {
 		port = defaultPort
 	}
+
+	router := chi.NewRouter()
+
+	router.Use(auth.Middleware())
 
 	database.InitDB()
 	database.Migrate()
