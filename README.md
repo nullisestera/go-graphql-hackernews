@@ -39,12 +39,14 @@ mutation create{
     1) `cd internal/pkg/db/migrations/`
     2) `migrate create -ext sql -dir mysql -seq create_yourmigration_table`
 4) Create table in your own migrations:
-    a) Example:
+    1) Example:
     ```
-    CREATE TABLE IF NOT EXISTS Users(
+    CREATE TABLE IF NOT EXISTS Links(
         ID INT NOT NULL UNIQUE AUTO_INCREMENT,
-        Username VARCHAR (127) NOT NULL UNIQUE,
-        Password VARCHAR (127) NOT NULL,
+        Title VARCHAR (255) ,
+        Address VARCHAR (255) ,
+        UserID INT ,
+        FOREIGN KEY (UserID) REFERENCES Users(ID) ,
         PRIMARY KEY (ID)
     )
     ```
