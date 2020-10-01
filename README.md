@@ -69,7 +69,7 @@ func (r *mutationResolver) CreateLink(ctx context.Context, input model.NewLink) 
 10) Run server `go run server.go` and execute some mutations and queries
 
 
-(*) Assuming that you have go-sql-driver and golang-migrate already. If not
+## (*) Assuming that you have go-sql-driver and golang-migrate already. If not
 
 1) Run `go get -u github.com/go-sql-driver/mysql`
 2) Install golang-migrate
