@@ -72,4 +72,13 @@ func (r *mutationResolver) CreateLink(ctx context.Context, input model.NewLink) 
 (*) Assuming that you have go-sql-driver and golang-migrate already. If not
 
 1) Run `go get -u github.com/go-sql-driver/mysql`
-2) Run `go build -tags 'mysql' -ldflags="-X main.Version=1.0.0" -o $GOPATH/bin/migrate github.com/golang-migrate/migrate/v4/cmd/migrate/` (If migrate doesn't exist in $GOPATH/bin/migrate, run go env, check your $GOPATH and create in it folder migrate)
+2) Install golang-migrate
+    1) `brew install golang-migrate` (MacOS) or `scoop install migrate` (Windows) or
+    ```
+        $ curl -L https://packagecloud.io/golang-migrate/migrate/gpgkey | apt-key add -
+        $ echo "deb https://packagecloud.io/golang-migrate/migrate/ubuntu/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/migrate.list
+        $ apt-get update
+        $ apt-get install -y migrate
+    ``` 
+    (Linux *debian based. I.E.: Ubuntu) 
+3) Run `go build -tags 'mysql' -ldflags="-X main.Version=1.0.0" -o $GOPATH/bin/migrate github.com/golang-migrate/migrate/v4/cmd/migrate/` (If migrate doesn't exist in $GOPATH/bin/migrate, run go env, check your $GOPATH and create in it folder migrate)
