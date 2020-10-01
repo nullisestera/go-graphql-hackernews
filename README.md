@@ -36,8 +36,8 @@ mutation create{
 1) Modify `graph/schema.graphqls` with your own 
 2) Run `go run github.com/99designs/gqlgen generate` (Assuming that you have gqlgen already. If not run first `go get github.com/99designs/gqlgen`)
 3) Create your own migrations (*):
-    a) `cd internal/pkg/db/migrations/`
-    b) `migrate create -ext sql -dir mysql -seq create_yourmigration_table`
+    1) `cd internal/pkg/db/migrations/`
+    2) `migrate create -ext sql -dir mysql -seq create_yourmigration_table`
 4) Create table in your own migrations:
     a) Example:
     ```
