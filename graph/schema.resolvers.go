@@ -72,6 +72,7 @@ func (r *mutationResolver) RefreshToken(ctx context.Context, input model.Refresh
 	}
 	return token, nil
 }
+
 func (r *queryResolver) Links(ctx context.Context) ([]*model.Link, error) {
 	var resultLinks []*model.Link
 	var dbLinks []links.Link
