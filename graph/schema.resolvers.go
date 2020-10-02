@@ -17,7 +17,6 @@ import (
 
 func (r *mutationResolver) CreateLink(ctx context.Context, input model.NewLink) (*model.Link, error) {
 	// 1
-	auth.Middleware()
 	user := auth.ForContext(ctx)
 
 	// Hardcoded while
