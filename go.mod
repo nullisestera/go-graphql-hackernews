@@ -33,6 +33,7 @@ require (
 	github.com/mitchellh/mapstructure v1.3.3 // indirect
 	github.com/nakagami/firebirdsql v0.9.0 // indirect
 	github.com/neo4j/neo4j-go-driver v1.8.3 // indirect
+	github.com/rs/cors v1.7.0 // indirect
 	github.com/shopspring/decimal v1.2.0 // indirect
 	github.com/snowflakedb/gosnowflake v1.3.9 // indirect
 	github.com/vektah/gqlparser/v2 v2.1.0
