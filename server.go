@@ -3,7 +3,7 @@ package main
 import (
 	"go-graphql-hackernews/graph"
 	"go-graphql-hackernews/graph/generated"
-	"go-graphql-hackernews/internal/auth"
+	auth "go-graphql-hackernews/internal/auth"
 	database "go-graphql-hackernews/internal/pkg/db/migrations/mysql"
 	"log"
 	"net/http"

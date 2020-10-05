@@ -8,7 +8,6 @@ import (
 	"fmt"
 	"go-graphql-hackernews/graph/generated"
 	"go-graphql-hackernews/graph/model"
-	"go-graphql-hackernews/internal/auth"
 	"go-graphql-hackernews/internal/links"
 	"go-graphql-hackernews/internal/users"
 	"go-graphql-hackernews/pkg/jwt"
@@ -17,14 +16,14 @@ import (
 
 func (r *mutationResolver) CreateLink(ctx context.Context, input model.NewLink) (*model.Link, error) {
 	// 1
-	user := auth.ForContext(ctx)
+	// user := auth.ForContext(ctx)
 
 	// Hardcoded while
 
-	/*user := &users.User{
+	user := &users.User{
 		ID:       "2",
 		Username: "ulises01",
-	}*/
+	}
 
 	if user == nil {
 		return &model.Link{}, fmt.Errorf("access denied")

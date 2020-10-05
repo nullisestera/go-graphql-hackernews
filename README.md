@@ -9,44 +9,6 @@
 4) Run server `go run server.go`
 5) In a browser, `localhost:8080` run some queries and mutations (GRAPHQL)
 
-#### NOTE: Some Endpoints requires Authorization Token
-
-1) Run this mutation in order to create an user:
-
-```
-mutation {
-  createUser(input: {username: "user1", password: "123"})
-}
-```
-
-2) Login in that user:
-
-```
-mutation {
-  login(input: {username: "user3", password: "123"})
-}
-```
-
-3) This will return the Auth Token
-
-```
-{
-  "data": {
-    "login": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDE3MzIxMzgsInVzZXJuYW1lIjoidXNlcjMifQ.zMRRxQfwO7CpW58YVmtBVnlVvKQ3XbhF5B06VO4dFgI"
-  }
-}
-```
-
-
-
-3) Use this Token in bottom tab HTTP HEADERS, as follow:
-
-```
-{
-  "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDE3MzIxMzgsInVzZXJuYW1lIjoidXNlcjMifQ.zMRRxQfwO7CpW58YVmtBVnlVvKQ3XbhF5B06VO4dFgI"
-}
-```
-
 
 #### GraphQL Query Example
 ```

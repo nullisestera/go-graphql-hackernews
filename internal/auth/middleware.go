@@ -10,11 +10,11 @@ import (
 	"go-graphql-hackernews/pkg/jwt"
 )
 
-var userCtxKey = &contextKey{"user"}
-
 type contextKey struct {
 	name string
 }
+
+var userCtxKey = &contextKey{"user"}
 
 func Middleware() func(http.Handler) http.Handler {
 	return func(next http.Handler) http.Handler {
@@ -44,7 +44,6 @@ func Middleware() func(http.Handler) http.Handler {
 			}
 			user.ID = strconv.Itoa(id)
 			// put it in context
-			fmt.Println("userCtxKey", userCtxKey)
 			ctx := context.WithValue(r.Context(), userCtxKey, &user)
 
 			// and call the next with our new context
@@ -56,7 +55,8 @@ func Middleware() func(http.Handler) http.Handler {
 
 // ForContext finds the user from the context. REQUIRES Middleware to have run.
 func ForContext(ctx context.Context) *users.User {
+	Middleware()
 	raw, _ := ctx.Value(userCtxKey).(*users.User)
-	fmt.Println(raw)
+	fmt.Println(userCtxKey)
 	return raw
 }
