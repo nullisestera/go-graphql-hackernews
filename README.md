@@ -60,6 +60,14 @@ mutation {
 }
 ```
 
+4) Use this Token in bottom tab HTTP HEADERS, as follow:
+
+```
+{
+  "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDE3MzIxMzgsInVzZXJuYW1lIjoidXNlcjMifQ.zMRRxQfwO7CpW58YVmtBVnlVvKQ3XbhF5B06VO4dFgI"
+}
+```
+
 
 ## Creating another tables or Modifying current
 
