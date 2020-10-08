@@ -1,4 +1,4 @@
-package users
+package errors
 
 type WrongUsernameOrPasswordError struct{}
 

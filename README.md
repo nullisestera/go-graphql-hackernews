@@ -32,6 +32,35 @@ mutation create{
 }
 ```
 
+#### NOTE: Some Endpoints requires Authorization Token
+
+1) Run this mutation in order to create an user:
+
+```
+mutation {
+  createUser(input: {username: "user1", password: "123"})
+}
+```
+
+2) Login in that user:
+
+```
+mutation {
+  login(input: {username: "user3", password: "123"})
+}
+```
+
+3) This will return the Auth Token
+
+```
+{
+  "data": {
+    "login": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDE3MzIxMzgsInVzZXJuYW1lIjoidXNlcjMifQ.zMRRxQfwO7CpW58YVmtBVnlVvKQ3XbhF5B06VO4dFgI"
+  }
+}
+```
+
+
 ## Creating another tables or Modifying current
 
 1) Modify `graph/schema.graphqls` with your own 

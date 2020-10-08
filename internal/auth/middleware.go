@@ -2,19 +2,17 @@ package auth
 
 import (
 	"context"
-	"fmt"
-	"net/http"
-	"strconv"
-
 	"go-graphql-hackernews/internal/users"
 	"go-graphql-hackernews/pkg/jwt"
+	"net/http"
+	"strconv"
 )
+
+var userCtxKey = &contextKey{"user"}
 
 type contextKey struct {
 	name string
 }
-
-var userCtxKey = &contextKey{"user"}
 
 func Middleware() func(http.Handler) http.Handler {
 	return func(next http.Handler) http.Handler {
@@ -55,8 +53,6 @@ func Middleware() func(http.Handler) http.Handler {
 
 // ForContext finds the user from the context. REQUIRES Middleware to have run.
 func ForContext(ctx context.Context) *users.User {
-	Middleware()
 	raw, _ := ctx.Value(userCtxKey).(*users.User)
-	fmt.Println(userCtxKey)
 	return raw
 }
